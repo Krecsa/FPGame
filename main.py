@@ -17,8 +17,7 @@ walk_right = [
     pygame.image.load('images/w_right/r4.png'),
     pygame.image.load('images/w_right/r5.png'),
     pygame.image.load('images/w_right/r6.png'),
-    pygame.image.load('images/w_right/r7.png'),
-    pygame.image.load('images/w_right/r8.png')
+    pygame.image.load('images/w_right/r7.png')
 ]
 walk_left = [
     pygame.image.load('images/w_left/l1.png'),
@@ -26,8 +25,7 @@ walk_left = [
     pygame.image.load('images/w_left/l3.png'),
     pygame.image.load('images/w_left/l5.png'),
     pygame.image.load('images/w_left/l6.png'),
-    pygame.image.load('images/w_left/l7.png'),
-    pygame.image.load('images/w_left/l8.png')
+    pygame.image.load('images/w_left/l7.png')
 ]
 
 wolf_anim_count = 0
@@ -40,7 +38,7 @@ while running:
     screen.blit(bg, (bg_x + 900, 0))
     screen.blit(walk_right[wolf_anim_count], (300, 325))
 
-    if wolf_anim_count == 7:
+    if wolf_anim_count == 6:
         wolf_anim_count = 0
     else:
         wolf_anim_count += 1
