@@ -23,6 +23,7 @@ walk_left = [
     pygame.image.load('images/w_left/l1.png'),
     pygame.image.load('images/w_left/l2.png'),
     pygame.image.load('images/w_left/l3.png'),
+    pygame.image.load('images/w_left/l4.png'),
     pygame.image.load('images/w_left/l5.png'),
     pygame.image.load('images/w_left/l6.png'),
     pygame.image.load('images/w_left/l7.png')
@@ -31,12 +32,25 @@ walk_left = [
 wolf_anim_count = 0
 bg_x = 0
 
+wolf_speed = 5
+wolf_x = 100
+
 running = True
 while running:
     clock.tick(10)
     screen.blit(bg, (bg_x,0))
     screen.blit(bg, (bg_x + 900, 0))
-    screen.blit(walk_right[wolf_anim_count], (300, 325))
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_a]:
+        screen.blit(walk_left[wolf_anim_count], (wolf_x, 325))
+    else:
+        screen.blit(walk_right[wolf_anim_count], (wolf_x, 325))
+
+    if keys[pygame.K_a] and wolf_x > 10:
+        wolf_x -= wolf_speed
+    elif keys[pygame.K_d] and wolf_x < 700:
+        wolf_x += wolf_speed
 
     if wolf_anim_count == 6:
         wolf_anim_count = 0
